@@ -1,9 +1,9 @@
 
-angle_body_head=145;
-angle_body_rest=136;
+angle_body_head=45;
+angle_body_rest=-(180-136);
 
 //angle_body_floor=27;
-angle_body_floor=27;
+angle_body_floor=0;
 
 length_head=33;
 length_body=57;
@@ -18,6 +18,8 @@ common_angle_base=10;
 
 chair_width=40;
 
+support_distance=(height_wood+space_base);
+
 module rotate_about(v,a) {
 translate(v) rotate(a) translate(-v) children(0);
 }
@@ -29,7 +31,7 @@ module rotate_about_debug(v,a) {
 module side() {
     //feet
     translate([length_body, 0, 0]){
-        rotate(a=[0,-(180-angle_body_rest),0]) {
+        rotate(a=[0,angle_body_rest,0]) {
             cube([length_rest,thickness_wood,height_wood]);
         }
     }
@@ -38,10 +40,10 @@ module side() {
     cube([length_body,thickness_wood,height_wood]);
 
     //head
-    rotate(a=[0,180-angle_body_head,0]) {
+    rotate(a=[0,angle_body_head,0]) {
         translate([-length_head, 0,0]){
             cube([length_head,thickness_wood,height_wood]);
-        }
+      }
     }
 }
 
@@ -55,13 +57,13 @@ module stretchers() {
 translate([length_body, 
     0,
     0]){
-    rotate(a=[0,-(180-angle_body_rest),0]) {
+    rotate(a=[0,angle_body_rest,0]) {
         cube([thickness_stretcher,chair_width,height_wood]);
     }
 }
 
 //head stretcher
-rotate(a=[0,180-angle_body_head,0]) {
+rotate(a=[0,angle_body_head,0]) {
     translate([-length_head, 0,0]){
         cube([thickness_stretcher,chair_width,height_wood]);
     }
@@ -74,12 +76,12 @@ rotate(a=[0,180-angle_body_head,0]) {
 
 //feet stretcher
 translate([length_body + 
-    cos(180-angle_body_rest)*(length_rest -thickness_stretcher)
+    cos(angle_body_rest)*(length_rest -thickness_stretcher)
     , 
     0,
-    +sin(180-angle_body_rest)*(length_rest -thickness_stretcher)
+    -sin(angle_body_rest)*(length_rest -thickness_stretcher)
     ]){
-    rotate(a=[0,-(180-angle_body_rest),0]) {
+    rotate(a=[0,angle_body_rest,0]) {
         cube([thickness_stretcher,chair_width,height_wood]);
     }
 }
@@ -90,17 +92,7 @@ translate([length_body +
 
 module base() {
     
-module feet_base() {
-    translate([
-    length_body+cos(-90+angle_body_rest)*(height_wood+space_base),
-    0,
-    -sin(-90-angle_body_rest)*(height_wood+space_base)
-    ]){
-        rotate(a=[0,-(180-angle_body_rest),0]) {
-            cube([length_rest,thickness_wood,height_wood]);
-        }
-    }
-}
+
     
 //body renfort
 translate([0, 0, -height_wood-space_base]){
@@ -117,42 +109,74 @@ translate([length_body-sin(common_angle_base)*height_wood,
     }
 }
 
+module feet_base() {
+    translate([
+    length_body+cos(90+angle_body_rest)*support_distance,
+    0,
+    -sin(90+angle_body_rest)*support_distance
+    ]){
+        rotate(a=[0,angle_body_rest,0]) {
+      
+            cube([length_rest,thickness_wood,height_wood]);
+            
+        }
+    }
+}
+
 //feet renfort
 feet_base();
 
 //feet support
 rotate_about([
-    length_body-cos(-90-angle_body_rest)*space_base,
+    length_body+cos(90+angle_body_rest)*space_base,
     0,
-    -sin(-90-angle_body_rest)*space_base], 
+    -sin(90+angle_body_rest)*space_base], 
     [0,-common_angle_base,0]) {
-    translate([
-        length_body+
-            cos(angle_body_rest-90)*(height_wood+space_base)
-            -sin(angle_body_rest-90)*(length_rest),
-        0,
-        - sin(angle_body_rest-90)*(height_wood+space_base)
-            +sin(-(180-angle_body_rest))*length_rest
-    ]){
-        rotate(a=[0,-(180-angle_body_rest),0]) {
-            cube([length_rest,thickness_wood,height_wood]);
+        translate([
+            -sin(angle_body_rest+90)*(length_rest),
+            0,
+            -cos(90+angle_body_rest)*length_rest
+        ]){
+           feet_base();
         }
-    }
 }
 
 //feet front
 rotate_about([
-    length_body+cos(180-angle_body_rest)*length_rest
-        +sin(180-angle_body_rest)*(height_wood+space_base),
+    length_body+cos(angle_body_rest)*length_rest
+        +cos(90+angle_body_rest)*support_distance,
     0,
-    sin(180-angle_body_rest)*length_rest
-        -cos(180-angle_body_rest)*(height_wood+space_base)], 
+    -sin(angle_body_rest)*length_rest
+        -cos(angle_body_rest)*support_distance], 
     [0,-48,0]) {
     feet_base();
 }
 
 
+//head renfort
 
+translate([
+    -sin(angle_body_head)*support_distance,
+    0,
+    -cos(angle_body_head)*support_distance]){
+    rotate(a=[0,angle_body_head,0]) {
+        translate([-length_head, 0,0]){
+            cube([length_head,thickness_wood,height_wood]);
+        }
+    }
+}
+
+//head support
+translate([
+    -sin(angle_body_head)*support_distance,
+    0,
+    -cos(angle_body_head)*support_distance]){
+    rotate(a=[0,angle_body_head,0]) {
+        translate([-length_head, 0,0]){
+            cube([length_head*3,thickness_wood,height_wood]);
+        }
+    }
+}
 
 
 }
