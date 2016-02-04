@@ -1,0 +1,23 @@
+chamfer at 19.99
+
+# 144.49 compound angle
+
+travel angle 57.95
+blade angle at right angle 35.510
+blade angle compounded 40.08
+
+# 135.87 compound angle
+
+travel angle 62.42
+compound cut angle (on cube): 47.58
+compound blade angle (on dial): 42.42
+
+left side, guide bar on top angle 27.58 (^62.42) : small side front
+right side, guide bar on bottom angle 27.58 : ref side front
+
+# edges length
+
+ref : 57.38
+bottom ref : 47.66
+ref small side : 58.84
+ref bottom small side : 53.97
