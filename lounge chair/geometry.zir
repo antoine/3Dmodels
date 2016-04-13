@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CaR>
+<Construction>
+<Window x="6.037803521084751" y="35.07752405462807" w="53.81737057623792" showgrid="true"/>
+<Windowdim w="1920" h="1179"/>
+<Preferences minfontsize="12" minpointsize="3" minlinesize="1" arrowsize="10" selectionsize="8" monkeyspeed="20" gridopacity="20" digits.lengths="2" digits.edit="4" digits.angles="2" colorbackground="245,245,245" colorbackgroundx="139" colorbackgroundy="9" colorbackgroundPal="4" fig3D="false" figDP="false"/>
+<Grid color="0" thickness="0"/>
+<Objects>
+<Line name="yAxis" n="1" yaxis="true">Y axis</Line>
+<Line name="xAxis" n="0" xaxis="true">X axis</Line>
+<Point name="P2" n="5" color="2" showname="true" x="-40.231413645180524" y="75.55655733363174" shape="circle">Point</Point>
+<Point name="P8" n="31" color="2" showname="true" x="69.59394507820302" y="36.741598785066" shape="circle">Point</Point>
+<Intersection name="P1" n="2" color="2" showname="true" first="xAxis" second="yAxis" shape="circle">Intersection between xAxis and yAxis</Intersection>
+<PointOn name="P4" n="10" color="2" on="xAxis" alpha="-49.847214244687024" x="-49.847214244687024" y="0.0" shape="circle">Point on xAxis</PointOn>
+<PointOn name="P5" n="17" color="2" on="xAxis" alpha="71.34433732909636" x="71.34433732909636" y="0.0" shape="circle">Point on xAxis</PointOn>
+<Segment name="s1" n="6" color="1" from="P1" to="P2" fixed="85.6">Line segment from P1 to P2 with length &quot;85.6&quot;</Segment>
+<Angle name="a1" n="13" color="1" showvalue="true" xcoffset="-5.581716128514682" ycoffset="4.785161225193307" unit="°" first="P4" root="P1" second="P2" display="normalsize" filled="true" acute="true">Angle P4 - P1 - P2</Angle>
+<Expression name="E14" n="48" color="1" type="thick" showname="true" showvalue="true" x="-60.409094891764795" y="52.71499330486191" value="d(P2,P1)" prompt="P2P1" fixed="true">Expression &quot;d(P2,P1)&quot; at -60.41, 52.71</Expression>
+<PointOn name="M1" n="14" color="2" showname="true" on="s1" alpha="0.6392193441165291" x="-25.716697843153078" y="48.297213022507016" shape="circle">Point on s1</PointOn>
+<PointOn name="M3" n="27" color="2" showname="true" on="s1" x="-6.628358292906774" y="12.4483802086298" shape="circle">Point on s1</PointOn>
+<Parallel name="pl1" n="51" color="3" point="P5" line="s1">Parallel line through P5 to s1</Parallel>
+<PointOn name="P3" n="52" color="5" on="s1" alpha="0.19328451619922757" x="-7.77610932241972" y="14.603912629910212" shape="circle">Point on s1</PointOn>
+<Segment name="s2" n="18" color="1" from="M1" to="P5">Line segment from M1 to P5</Segment>
+<Expression name="P2P3" n="19" color="1" type="thick" showname="true" showvalue="true" x="-60.20114620022683" y="49.38781424025527" value="d(P2,M1)" prompt="P2M1" fixed="true">Expression &quot;d(P2,M1)&quot; at -60.2, 49.39</Expression>
+<Angle name="a2" n="23" color="1" showvalue="true" xcoffset="5.977003566218769" ycoffset="-1.5801580714872214" unit="°" first="P2" root="M1" second="P5" display="normalsize" filled="true" acute="true">Angle P2 - M1 - P5</Angle>
+<Expression name="E5" n="28" color="1" type="thick" showname="true" showvalue="true" x="-35.23940405336655" y="1.8547054764929536" value="d(P1,M3)" prompt="P1M3" fixed="true">Expression &quot;d(P1,M3)&quot; at -35.24, 1.85</Expression>
+<Segment name="s3" n="32" color="1" from="M3" to="P8" fixed="80">Line segment from M3 to P8 with length &quot;80&quot;</Segment>
+<Expression name="E7" n="41" color="1" type="thick" showname="true" showvalue="true" x="-60.20114620022693" y="45.852686484110684" value="d(M1,P1)" prompt="M1P1" fixed="true">Expression &quot;d(M1,P1)&quot; at -60.2, 45.85</Expression>
+<Expression name="E11" n="45" color="1" type="thick" showname="true" showvalue="true" x="13.204741912657715" y="51.67524984717229" value="d(M1,P5)" prompt="M1P5" fixed="true">Expression &quot;d(M1,P5)&quot; at 13.2, 51.68</Expression>
+<Expression name="E13" n="47" color="1" type="thick" showname="true" showvalue="true" x="63.320376573295654" y="19.235253967257304" value="d(M3,P8)" prompt="M3P8" fixed="true">Expression &quot;d(M3,P8)&quot; at 63.32, 19.24</Expression>
+<Intersection name="M2" n="33" color="2" showname="true" first="s2" second="s3" shape="circle">Intersection between s2 and s3</Intersection>
+<Expression name="E6" n="34" color="1" type="thick" showname="true" showvalue="true" x="13.204741912657711" y="48.76396816564148" value="d(M1,M2)" prompt="M1M2" fixed="true">Expression &quot;d(M1,M2)&quot; at 13.2, 48.76</Expression>
+<Angle name="a3" n="37" color="1" showvalue="true" xcoffset="-6.068892348788476" ycoffset="1.1789897456274936" unit="°" first="P1" root="P5" second="M2" display="normalsize" filled="true" acute="true">Angle P1 - P5 - M2</Angle>
+<Angle name="a4" n="40" color="1" showvalue="true" xcoffset="-1.140443774467309" ycoffset="6.076253710861393" unit="°" first="M1" root="M2" second="P8" display="normalsize" filled="true" acute="true">Angle M1 - M2 - P8</Angle>
+<Expression name="E9" n="43" color="1" type="thick" showname="true" showvalue="true" x="62.904479190219774" y="12.58089583804397" value="d(M2,P8)" prompt="M2P8" fixed="true">Expression &quot;d(M2,P8)&quot; at 62.9, 12.58</Expression>
+<Expression name="E10" n="44" color="1" type="thick" showname="true" showvalue="true" x="13.412690604195635" y="45.852686484110684" value="d(M2,P5)" prompt="M2P5" fixed="true">Expression &quot;d(M2,P5)&quot; at 13.41, 45.85</Expression>
+<Expression name="E12" n="46" color="1" type="thick" showname="true" showvalue="true" x="63.11242788175774" y="15.700126211112709" value="d(M3,M2)" prompt="M3M2" fixed="true">Expression &quot;d(M3,M2)&quot; at 63.11, 15.7</Expression>
+<Midpoint name="P6" n="55" color="5" first="M2" second="P5" shape="circle">Midpoint between M2 and P5</Midpoint>
+<Angle name="a5" n="58" color="1" showvalue="true" xcoffset="5.03604615474194" ycoffset="-0.2796083012156947" unit="°" first="P1" root="M3" second="M2" display="normalsize" filled="true" acute="true">Angle P1 - M3 - M2</Angle>
+<Ray name="r1" n="61" color="3" from="M2" to="M3">Ray from M2 pointing to M3</Ray>
+<Intersection name="P7" n="62" color="2" first="xAxis" second="r1" shape="circle">Intersection between xAxis and r1</Intersection>
+<Angle name="a6" n="65" color="1" showvalue="true" xcoffset="2.9672208027031273" ycoffset="0.435865052081967" unit="°" first="P1" root="P7" second="M3" display="normalsize" filled="true" acute="true">Angle P1 - P7 - M3</Angle>
+</Objects>
+</Construction>
+</CaR>
