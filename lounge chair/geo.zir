@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CaR>
+<Construction>
+<Window x="0.0" y="0.0" w="161.26989438654292" showgrid="true"/>
+<Windowdim w="1276" h="717"/>
+<Preferences minfontsize="12" minpointsize="3" minlinesize="1" arrowsize="10" selectionsize="8" monkeyspeed="20" gridopacity="20" digits.lengths="2" digits.edit="4" digits.angles="2" colorbackground="245,245,245" colorbackgroundx="139" colorbackgroundy="9" colorbackgroundPal="4" fig3D="false" figDP="false"/>
+<Grid color="0" thickness="0"/>
+<Objects>
+<Point name="top" n="4" color="2" showname="true" x="-40.225029069844425" y="75.55995656649208" shape="circle">Point</Point>
+<Point name="P3" n="6" color="2" showname="true" x="0" actx="0.0" y="0" acty="0.0" shape="circle" fixed="true">Point</Point>
+<Line name="yAxis" n="1" yaxis="true">Y axis</Line>
+<Line name="xAxis" n="0" xaxis="true">X axis</Line>
+<Point name="knees" n="18" color="2" showname="true" x="69.73475022682342" y="36.23915393682118" shape="circle">Point</Point>
+<Segment name="dossier" n="10" color="1" showname="true" from="top" to="P3" fixed="85.6">Line segment from top to P3 with length &quot;85.6&quot;</Segment>
+<PointOn name="brace" n="17" color="2" showname="true" on="dossier" x="-6.672341393510592" y="12.533535401927743" shape="circle">Point on dossier</PointOn>
+<PointOn name="fangle" n="26" color="2" showname="true" on="dossier" alpha="0.361544082139197" x="-25.681907855765004" y="48.24170142318211" shape="circle">Point on dossier</PointOn>
+<Segment name="siege" n="21" color="1" showname="true" from="brace" to="knees" fixed="80">Line segment from brace to knees with length &quot;80&quot;</Segment>
+<Expression name="E1" n="27" color="1" type="thick" showname="true" showvalue="true" x="-53.3646049793209" y="-67.18353850013683" value="d(top,fangle)" prompt="head">Expression &quot;d(top,fangle)&quot; at -56.54, -71.18</Expression>
+<PointOn name="sangle" n="28" color="2" showname="true" on="siege" alpha="0.4245921194520316" x="25.769507578732593" y="22.598754218579515" shape="circle">Point on siege</PointOn>
+<Ray name="r1" n="31" color="3" from="fangle" to="sangle">Ray from fangle pointing to sangle</Ray>
+<Expression name="E3" n="38" color="1" type="thick" showname="true" showvalue="true" x="27.49085711055921" y="-66.59549877584678" value="d(sangle,knees)" prompt="third">Expression &quot;d(sangle,knees)&quot; at 29.13, -70.56</Expression>
+<Expression name="E4" n="39" color="1" type="thick" showname="true" showvalue="true" x="-16.31810234904857" y="-66.30147891370184" value="d(fangle,sangle)" prompt="middle">Expression &quot;d(fangle,sangle)&quot; at -17.29, -70.24</Expression>
+<Intersection name="P1" n="40" color="2" showname="true" first="xAxis" second="r1" shape="circle">Intersection between xAxis and r1</Intersection>
+<Expression name="E2" n="37" color="1" type="thick" showname="true" showvalue="true" x="32.48919476702466" y="-55.422744014336125" value="d(brace,knees)" prompt="three">Expression &quot;d(brace,knees)&quot; at 34.42, -58.72</Expression>
+<Expression name="E5" n="41" color="1" type="thick" showname="true" showvalue="true" x="-50.42440635787071" y="-56.59882346291616" value="d(top,P3)" prompt="one">Expression &quot;d(top,P3)&quot; at -53.42, -59.96</Expression>
+<Expression name="E6" n="42" color="1" type="thick" showname="true" showvalue="true" x="-11.613784554728236" y="-58.068922773641276" value="d(fangle,P1)" prompt="two">Expression &quot;d(fangle,P1)&quot; at -12.3, -61.52</Expression>
+<Expression name="E8" n="52" color="1" type="thick" showname="true" showvalue="true" x="-57.18686318720617" y="-76.29815422663246" value="d(fangle,P3)" prompt="bhead">Expression &quot;d(fangle,P3)&quot; at -60.59, -80.84</Expression>
+<Expression name="E9" n="53" color="1" type="thick" showname="true" showvalue="true" x="-16.024082486903588" y="-73.94599532947225" value="d(sangle,P1)" prompt="bmiddle">Expression &quot;d(sangle,P1)&quot; at -16.98, -78.34</Expression>
+<Expression name="E10" n="54" color="1" type="thick" showname="true" showvalue="true" x="27.1968372484142" y="-75.41609464019731" value="d(brace,sangle)" prompt="bthird">Expression &quot;d(brace,sangle)&quot; at 28.81, -79.9</Expression>
+<Expression name="E13" n="57" color="1" type="thick" showname="true" showvalue="true" x="-17.494181797628656" y="-11.613784554728236" value="d(brace,P3)" prompt="Value">Expression &quot;d(brace,P3)&quot; at -18.53, -12.3</Expression>
+<PointOn name="P2" n="59" color="2" on="xAxis" alpha="-25.699013418478614" x="-25.699013418478614" y="0.0" shape="circle">Point on xAxis</PointOn>
+<Angle name="a1" n="68" color="1" showvalue="true" unit="°" first="P2" root="P3" second="brace" display="normalsize" filled="true" acute="true">Angle P2 - P3 - brace</Angle>
+<Angle name="a2" n="71" color="1" showvalue="true" xcoffset="2.016496574242534" ycoffset="7.521977205352009" unit="°" first="fangle" root="brace" second="sangle" display="normalsize" filled="true" acute="true">Angle fangle - brace - sangle</Angle>
+<Angle name="a3" n="74" color="1" showvalue="true" xcoffset="-7.644967537822876" ycoffset="1.4835332343434435" unit="°" first="P3" root="P1" second="sangle" display="normalsize" filled="true" acute="true">Angle P3 - P1 - sangle</Angle>
+<Angle name="a4" n="78" color="1" showvalue="true" xcoffset="7.779569623150792" ycoffset="0.35312319424887284" unit="°" first="top" root="fangle" second="sangle" display="normalsize" filled="true" acute="true">Angle top - fangle - sangle</Angle>
+<Angle name="a5" n="81" color="1" showvalue="true" xcoffset="-1.4578327124952675" ycoffset="7.649910018696023" unit="°" first="fangle" root="sangle" second="knees" display="normalsize" filled="true" acute="true">Angle fangle - sangle - knees</Angle>
+</Objects>
+</Construction>
+</CaR>
